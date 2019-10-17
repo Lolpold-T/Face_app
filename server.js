@@ -31,8 +31,8 @@ app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)});
 app.put('/image', (req, res) => {image.handleImage(req, res, db)});
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)});
 
-const port = 3000;
-app.listen(port, ()=> console.log(`app is running on port ${port}`));
+const port = process.env.PORT;
+app.listen(port || 3000, ()=> console.log(`app is running on port ${port}`));
 
 //old database
 // const database = {
